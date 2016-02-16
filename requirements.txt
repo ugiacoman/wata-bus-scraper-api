@@ -2,8 +2,6 @@ Flask==0.10.1
 gunicorn==19.4.5
 heroku==0.1.4
 requests==2.9.1
-traitlets==4.1.0
-vboxapi==1.0
 virtualenv==14.0.0
 Werkzeug==0.11.4
 wheel==0.26.0
