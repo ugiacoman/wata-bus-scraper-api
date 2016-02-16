@@ -26,22 +26,26 @@ def get_tasks():
     text = '\n'.join(chunk for chunk in chunks if chunk)
     text = text.encode('utf-8')
     text_list = text.split("\n")
-
+    count = 0
     print("")
     print("Monticello -> Caf")
     for line in text_list:
         if "MIN" in line:
             line = line.replace("\xc2\xa0", " ")
             route = {
+                    'id': count,
                     'type': "OUTBOUND",
                     'time': line,
                 }
+            count +=1
             routes.append(route)
         if "DUE" in line:
             route = {
+                    'id': count,
                     'type': "OUTBOUND",
                     'time': "DUE",
                 }
+            count +=1
             routes.append(route)
 
 
@@ -71,15 +75,19 @@ def get_tasks():
         if "MIN" in line:
             line = line.replace("\xc2\xa0", " ")
             route = {
+                    'id': count,
                     'type': "INBOUND",
                     'time': line,
                 }
+            count += 1
             routes.append(route)
         if "DUE" in line:
             route = {
+                    'id': count,
                     'type': "INBOUND",
                     'time': "DUE",
                 }
+            count += 1
             routes.append(route)
     return jsonify({'routes': routes})
 
