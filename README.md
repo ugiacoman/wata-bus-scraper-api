@@ -1,2 +1,4 @@
 # wata-bus-scraper-api
-Scrapes WATA Williamsburg,VA busses.
+Wanted to know when my bus was arriving. Decided to make an API and compliment it with an iOS app.
+
+iOS app can be found here: 
